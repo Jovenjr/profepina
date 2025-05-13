@@ -53,24 +53,28 @@ export const BUSINESS_INFO = {
 
 export const TIKTOK_VIDEOS = [
   {
-    title: "Tips para comprar autos usados",
+    title: "El Profe Piña - Video 1",
     views: "15.2K",
-    likes: "1.2K"
+    likes: "1.2K",
+    embedUrl: "https://www.tiktok.com/@el.profe.pina.com/video/7502586384977284395"
   },
   {
-    title: "Subasta de autos ¡Increíbles ofertas!",
+    title: "El Profe Piña - Video 2",
     views: "23.5K",
-    likes: "3.7K"
+    likes: "3.7K",
+    embedUrl: "https://www.tiktok.com/@el.profe.pina.com/video/7503079525115465006"
   },
   {
-    title: "Pallets de mercancía Target y Amazon",
+    title: "El Profe Piña - Video 3",
     views: "18.7K",
-    likes: "2.4K"
+    likes: "2.4K",
+    embedUrl: "https://www.tiktok.com/@el.profe.pina.com/video/7503683050371419435"
   },
   {
-    title: "Envíos a México y Centro América",
+    title: "El Profe Piña - Video 4",
     views: "12.3K",
-    likes: "1.8K"
+    likes: "1.8K",
+    embedUrl: "https://www.tiktok.com/@el.profe.pina.com/video/7415439395580382494"
   }
 ];
 

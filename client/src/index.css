@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TikTok embed styling */
+.tiktok-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tiktok-container blockquote {
+  margin: 0 !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.tiktok-embed {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Responsive layout for TikTok embeds */
+@media (max-width: 640px) {
+  .tiktok-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 :root {
       --background: 0 0% 100%;
 --foreground: 20 14.3% 4.1%;

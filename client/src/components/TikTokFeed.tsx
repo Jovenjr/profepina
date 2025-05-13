@@ -1,8 +1,64 @@
 import { motion } from "framer-motion";
 import { BUSINESS_INFO, TIKTOK_VIDEOS } from "@/lib/constants";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const TikTokVideo = ({ video, index }: { video: typeof TIKTOK_VIDEOS[0], index: number }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if TikTok embed script exists and is ready
+    if (window.tiktokEmbedsArray && containerRef.current) {
+      const blockquote = document.createElement('blockquote');
+      blockquote.className = 'tiktok-embed';
+      
+      // Extract video ID from URL
+      const videoIdMatch = video.embedUrl.match(/\/video\/(\d+)/);
+      const videoId = videoIdMatch ? videoIdMatch[1] : '';
+      
+      if (videoId) {
+        blockquote.setAttribute('cite', video.embedUrl);
+        blockquote.setAttribute('data-video-id', videoId);
+        blockquote.setAttribute('style', 'max-width: 605px; min-width: 325px;');
+        
+        // Add required attribution section
+        blockquote.innerHTML = `
+          <section>
+            <a target="_blank" href="${video.embedUrl}"></a>
+          </section>
+        `;
+        
+        // Clear container and add the blockquote
+        if (containerRef.current) {
+          containerRef.current.innerHTML = '';
+          containerRef.current.appendChild(blockquote);
+          
+          // Reload TikTok embeds
+          if (window.tiktokEmbedsArray && typeof window.tiktokEmbedsArray.forEach === 'function') {
+            window.tiktokEmbedsArray = [];
+          }
+          
+          if (typeof window.TiktokPlayer !== 'undefined') {
+            window.TiktokPlayer.reload();
+          } else {
+            // If TikTok script is already loaded but Player is not defined
+            const existingScript = document.querySelector('script[src*="tiktok.com/embed.js"]');
+            if (existingScript) {
+              document.body.removeChild(existingScript);
+            }
+            
+            const script = document.createElement('script');
+            script.src = 'https://www.tiktok.com/embed.js';
+            script.async = true;
+            document.body.appendChild(script);
+          }
+          
+          setLoading(false);
+        }
+      }
+    }
+  }, [video.embedUrl, window.tiktokEmbedsArray]);
+
   return (
     <motion.div 
       className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden"
@@ -12,13 +68,15 @@ const TikTokVideo = ({ video, index }: { video: typeof TIKTOK_VIDEOS[0], index: 
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="aspect-[9/16] bg-gray-100 overflow-hidden relative">
-        {/* Placeholder for actual TikTok embed */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <i className="fab fa-tiktok text-3xl text-gray-400 mb-2"></i>
-            <p className="text-gray-500 text-sm">TikTok Video</p>
+        {loading ? (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center">
+              <i className="fab fa-tiktok text-3xl text-gray-400 mb-2 animate-pulse"></i>
+              <p className="text-gray-500 text-sm">Cargando video...</p>
+            </div>
           </div>
-        </div>
+        ) : null}
+        <div ref={containerRef} className="tiktok-container w-full h-full"></div>
       </div>
       <div className="p-4">
         <h4 className="font-medium text-[#1f2937] mb-1 truncate">{video.title}</h4>
@@ -31,22 +89,43 @@ const TikTokVideo = ({ video, index }: { video: typeof TIKTOK_VIDEOS[0], index: 
   );
 };
 
+// Add TikTok embed script type definition
+declare global {
+  interface Window {
+    tiktokEmbedsArray: any[];
+    TiktokPlayer: {
+      reload: () => void;
+    };
+  }
+}
+
 const TikTokFeed = () => {
   // State to track if the TikTok script is loaded
   const [tiktokScriptLoaded, setTiktokScriptLoaded] = useState(false);
 
   useEffect(() => {
+    // Initialize the tiktokEmbedsArray if it doesn't exist
+    if (!window.tiktokEmbedsArray) {
+      window.tiktokEmbedsArray = [];
+    }
+    
     // Load TikTok embed script
     if (!tiktokScriptLoaded) {
-      const script = document.createElement('script');
-      script.src = 'https://www.tiktok.com/embed.js';
-      script.async = true;
-      script.onload = () => setTiktokScriptLoaded(true);
-      document.body.appendChild(script);
+      const existingScript = document.querySelector('script[src*="tiktok.com/embed.js"]');
       
-      return () => {
-        document.body.removeChild(script);
-      };
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = 'https://www.tiktok.com/embed.js';
+        script.async = true;
+        script.onload = () => setTiktokScriptLoaded(true);
+        document.body.appendChild(script);
+        
+        return () => {
+          document.body.removeChild(script);
+        };
+      } else {
+        setTiktokScriptLoaded(true);
+      }
     }
   }, [tiktokScriptLoaded]);
 
