@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Gallery from "@/components/Gallery";
 import TikTokFeed from "@/components/TikTokFeed";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -61,7 +60,6 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Services />
-      <Gallery />
       <TikTokFeed />
       <ContactSection />
       <Footer />

@@ -31,7 +31,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#inicio" className="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
               <li><a href="#servicios" className="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="#galeria" className="text-gray-400 hover:text-white transition-colors">Galería</a></li>
               <li><a href="#tiktok" className="text-gray-400 hover:text-white transition-colors">TikTok</a></li>
               <li><a href="#contacto" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
             </ul>

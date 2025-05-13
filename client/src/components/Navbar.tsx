@@ -25,7 +25,6 @@ const Navbar = () => {
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#inicio" className="font-medium text-gray-700 hover:text-primary transition-colors">Inicio</a>
           <a href="#servicios" className="font-medium text-gray-700 hover:text-primary transition-colors">Servicios</a>
-          <a href="#galeria" className="font-medium text-gray-700 hover:text-primary transition-colors">Galería</a>
           <a href="#tiktok" className="font-medium text-gray-700 hover:text-primary transition-colors">TikTok</a>
           <a href="#contacto" className="font-medium text-gray-700 hover:text-primary transition-colors">Contacto</a>
           <a 
@@ -72,13 +71,7 @@ const Navbar = () => {
               >
                 Servicios
               </a>
-              <a 
-                href="#galeria" 
-                className="font-medium text-gray-700 hover:text-primary transition-colors py-2"
-                onClick={closeMobileMenu}
-              >
-                Galería
-              </a>
+
               <a 
                 href="#tiktok" 
                 className="font-medium text-gray-700 hover:text-primary transition-colors py-2"
