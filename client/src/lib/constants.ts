@@ -16,37 +16,43 @@ export const BUSINESS_INFO = {
       id: "autos",
       title: "Compra y Venta de Autos",
       description: "Encuentra el auto usado perfecto para ti o vende el tuyo con nuestra ayuda profesional y garantía de mejor precio.",
-      icon: "fa-car"
+      icon: "fa-car",
+      image: "/images/735.jpg"
     },
     {
       id: "subastas",
       title: "Subastas de Autos",
       description: "Accede a las mejores oportunidades en subastas de vehículos con nuestra asesoría experta y servicios de intermediación.",
-      icon: "fa-gavel"
+      icon: "fa-gavel",
+      image: "/images/491648434_993470789592869_7436303693829917589_n.jpg"
     },
     {
       id: "pallets",
       title: "Pallets de Mercancía",
       description: "Compra y venta de contenedores y pallets de tiendas premium como JCPenney, Target, Macys, Costco y Amazon.",
-      icon: "fa-box"
+      icon: "fa-box",
+      image: "/images/2148923142.jpg"
     },
     {
       id: "envios",
       title: "Envíos de Mercancía",
       description: "Servicio de envío de mercancía a todo Estados Unidos y México, con garantía de entrega segura y rastreo.",
-      icon: "fa-shipping-fast"
+      icon: "fa-shipping-fast",
+      image: "/images/repartidor-de-tiro-medio-hablando-por-telefono.jpg"
     },
     {
       id: "traslado",
       title: "Traslado de Vehículos",
       description: "Servicio de transporte de vehículos por toda América: Canadá, USA, México, Centroamérica y partes de Sudamérica.",
-      icon: "fa-truck"
+      icon: "fa-truck",
+      image: "/images/2149426496.jpg"
     },
     {
       id: "marketing",
       title: "Marketing Digital",
       description: "Consultoría y servicios de marketing digital para impulsar tu negocio, mejorar tu presencia online y aumentar ventas.",
-      icon: "fa-bullhorn"
+      icon: "fa-bullhorn",
+      image: "/images/105723.jpg"
     }
   ]
 };

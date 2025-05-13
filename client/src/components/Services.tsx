@@ -3,7 +3,7 @@ import { BUSINESS_INFO } from "@/lib/constants";
 
 const ServiceCard = ({ service, index }: { service: typeof BUSINESS_INFO.services[0], index: number }) => {
   return (
-    <motion.div 
+    <motion.div
       className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -11,9 +11,9 @@ const ServiceCard = ({ service, index }: { service: typeof BUSINESS_INFO.service
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="h-48 overflow-hidden">
-        <img 
-          src={`https://source.unsplash.com/featured/?${service.id},${service.title}`} 
-          alt={service.title} 
+        <img
+          src={service.image}
+          alt={service.title}
           className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
         />
       </div>
@@ -37,7 +37,7 @@ const Services = () => {
   return (
     <section id="servicios" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const Services = () => {
             Ofrecemos una amplia gama de servicios relacionados con vehículos, subastas y envíos tanto nacionales como internacionales.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BUSINESS_INFO.services.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
