@@ -3,18 +3,18 @@ import { BUSINESS_INFO } from "@/lib/constants";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-40 md:pt-48 relative overflow-hidden">
-      {/* Hero background image */}
+    <section id="inicio" className="pt-32 md:pt-36 relative overflow-hidden">
+      {/* Hero background image with blue filter */}
       <div 
         className="absolute inset-0 bg-cover bg-center" 
         style={{ 
           backgroundImage: 'url("https://images.unsplash.com/photo-1560253414-f65d1f5a1a37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080")',
-          filter: 'brightness(0.6)'
+          filter: 'brightness(0.5) sepia(0.4) saturate(1.5) hue-rotate(190deg)'
         }}
       ></div>
       
       {/* Gradient overlay */}
-      <div className="hero-gradient absolute inset-0"></div>
+      <div className="absolute inset-0 bg-[#1e3a8a]/60"></div>
       
       <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <div className="max-w-3xl">

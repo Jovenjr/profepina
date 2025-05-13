@@ -31,26 +31,12 @@ const Navbar = () => {
   
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}>
-      {/* Franja superior gris oscuro */}
-      <div className="w-full h-14 md:h-16 bg-gray-700"></div>
-      
-      {/* Barra de navegación blanca */}
-      <div className="bg-white">
-        <div className="container mx-auto px-4">
-          <div className="relative py-2">
-            {/* Logo centrado que sobresale */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 -top-16 md:-top-24 z-10">
-              <div className="w-24 md:w-32 h-auto">
-                <img 
-                  src={logoProfePina} 
-                  alt="El Profe Piña Logo" 
-                  className="w-full h-auto" 
-                />
-              </div>
-            </div>
-            
-            {/* Contenedor para navegación dividida */}
-            <div className="flex justify-between items-center">
+      {/* Fondo azul marino en todo el header */}
+      <div className="w-full h-32 md:h-36 bg-[#1e3a8a] relative">
+        {/* Franja blanca central para navegación */}
+        <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-12 bg-white">
+          <div className="container mx-auto px-4 h-full">
+            <div className="flex justify-between items-center h-full">
               {/* Enlaces a la izquierda */}
               <nav className="hidden md:flex space-x-8 items-center">
                 <a href="#inicio" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors">Inicio</a>
@@ -83,6 +69,17 @@ const Navbar = () => {
                 <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
               </button>
             </div>
+          </div>
+        </div>
+        
+        {/* Logo centrado sobre la franja blanca */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
+          <div className="w-24 md:w-32 h-auto">
+            <img 
+              src={logoProfePina} 
+              alt="El Profe Piña Logo" 
+              className="w-full h-auto" 
+            />
           </div>
         </div>
       </div>
