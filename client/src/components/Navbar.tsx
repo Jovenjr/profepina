@@ -35,21 +35,21 @@ const Navbar = () => {
       <div className="w-full h-32 md:h-36 bg-[#1e3a8a] relative">
         {/* Franja blanca central para navegación */}
         <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-12 bg-white">
-          <div className="container mx-auto px-4 h-full">
+          <div className="container mx-auto px-0 h-full">
             <div className="flex justify-between items-center h-full">
               {/* Enlaces a la izquierda */}
-              <nav className="hidden md:flex space-x-8 items-center">
-                <a href="#inicio" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors">Inicio</a>
+              <nav className="hidden md:flex items-center pl-8">
+                <a href="#inicio" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors mr-6">Inicio</a>
                 <a href="#servicios" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors">Servicios</a>
               </nav>
               
               {/* Espacio central para el logo */}
-              <div className="w-24 md:w-32"></div>
+              <div className="w-16 md:w-20"></div>
               
               {/* Enlaces a la derecha */}
-              <nav className="hidden md:flex space-x-8 items-center">
-                <a href="#tiktok" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors">TikTok</a>
-                <a href="#contacto" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors">Contacto</a>
+              <nav className="hidden md:flex items-center pr-8">
+                <a href="#tiktok" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors mr-6">TikTok</a>
+                <a href="#contacto" className="font-medium text-gray-700 hover:text-[#f59e0b] transition-colors mr-6">Contacto</a>
                 <a 
                   href={BUSINESS_INFO.whatsappLink} 
                   target="_blank" 
