@@ -3,7 +3,7 @@ import { BUSINESS_INFO } from "@/lib/constants";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-20 md:pt-28 relative overflow-hidden">
+    <section id="inicio" className="pt-32 md:pt-40 relative overflow-hidden">
       {/* Hero background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center" 
