@@ -27,34 +27,33 @@ export const BUSINESS_INFO = {
       image: "/images/491648434_993470789592869_7436303693829917589_n.jpg"
     },
     {
-      id: "pallets",
-      title: "Pallets de Mercancía",
-      description: "Compra y venta de contenedores y pallets de tiendas premium como JCPenney, Target, Macys, Costco y Amazon.",
-      icon: "fa-box",
-      image: "/images/2148923142.jpg"
-    },
-    {
-      id: "envios",
-      title: "Envíos de Mercancía",
-      description: "Servicio de envío de mercancía a todo Estados Unidos y México, con garantía de entrega segura y rastreo.",
-      icon: "fa-shipping-fast",
-      image: "/images/repartidor-de-tiro-medio-hablando-por-telefono.jpg"
-    },
-    {
       id: "traslado",
       title: "Traslado de Vehículos",
       description: "Servicio de transporte de vehículos por toda América: Canadá, USA, México, Centroamérica y partes de Sudamérica.",
       icon: "fa-truck",
       image: "/images/2149426496.jpg"
-    },
-    {
-      id: "marketing",
-      title: "Marketing Digital",
-      description: "Consultoría y servicios de marketing digital para impulsar tu negocio, mejorar tu presencia online y aumentar ventas.",
-      icon: "fa-bullhorn",
-      image: "/images/105723.jpg"
     }
   ]
+};
+
+export const MEMBERSHIP_INFO = {
+  title: "Membresía La Casa de la Subasta",
+  price: 200,
+  currency: "USD",
+  duration: "12 meses",
+  benefits: [
+    "Inventario anticipado 1 día antes que nadie",
+    "Información detallada del vehículo (marca, año, modelo, N° serie, millas)",
+    "CarFax GRATIS (valor $55 USD por reporte)",
+    "Fotos completas: interior, tablero, exterior y video del motor",
+    "Grupo privado de apoyo con moderador experto",
+    "Subastas exclusivas para miembros (Lunes)",
+    "Ofertas exclusivas (Martes y Viernes) - 6-12 vehículos",
+    "Acceso prioritario a autos populares (Tacomas, Civics, Camrys)",
+    "Apuestas en línea desde cualquier lugar",
+    "Atención prioritaria - Servicio VIP"
+  ],
+  videoUrl: "https://youtu.be/ctEVPYfpSaY?si=BvKXu1as7GwooPAi"
 };
 
 export const TIKTOK_VIDEOS = [
